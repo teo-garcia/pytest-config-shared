@@ -1,0 +1,40 @@
+[project]
+name = "teo-pytest-config-shared"
+version = "0.1.0"
+description = "Shared pytest configuration for teo-garcia Python templates"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "teo-garcia" }]
+keywords = ["pytest", "testing", "coverage", "shared", "python"]
+dependencies = []
+
+[project.scripts]
+teo-pytest-config-path = "teo_pytest_config_shared:_cli"
+
+[project.urls]
+Repository = "https://github.com/teo-garcia/pytest-config-shared"
+
+[dependency-groups]
+dev = ["pytest>=8.3", "pytest-cov>=6.0", "ruff>=0.8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/teo_pytest_config_shared"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "N", "UP", "B", "S", "A", "C4", "SIM", "RUF"]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"src/**" = ["T20"]
+
+[tool.ruff.format]
+quote-style = "double"
