@@ -16,7 +16,12 @@ teo-pytest-config-path = "teo_pytest_config_shared:_cli"
 Repository = "https://github.com/teo-garcia/pytest-config-shared"
 
 [dependency-groups]
-dev = ["pytest>=8.3", "pytest-cov>=6.0", "ruff>=0.8"]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.25",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+]
 
 [build-system]
 requires = ["hatchling"]

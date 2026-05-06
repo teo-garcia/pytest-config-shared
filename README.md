@@ -66,7 +66,10 @@ show_missing = true
 fail_under = 80
 ```
 
-Use `teo-pytest-config-path` to inspect the canonical baseline whenever you update your project config.
+Coverage settings belong in `pyproject.toml`, `.coveragerc`, `setup.cfg`, or
+`tox.ini`; the exported `pytest.ini` intentionally contains only pytest-native
+options. Use `teo-pytest-config-path` to inspect the canonical pytest baseline
+whenever you update your project config.
 
 ---
 
