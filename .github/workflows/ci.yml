@@ -35,5 +35,7 @@ jobs:
         run: uv run ruff format --check .
 
       - name: Validate pytest config
-        run: uv run pytest --co -q --inifile src/teo_pytest_config_shared/pytest.ini --rootdir .
-        continue-on-error: true
+        run: uv run pytest --rootdir . -c src/teo_pytest_config_shared/pytest.ini tests/fixtures/consumer
+
+      - name: Consumer smoke check
+        run: uv run pytest --rootdir . -c "$(uv run teo-pytest-config-path)" tests/fixtures/consumer
