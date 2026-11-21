@@ -20,7 +20,7 @@ Part of the [@teo-garcia/templates](https://github.com/teo-garcia/templates) eco
 | --- | --- |
 | **asyncio_mode** | auto |
 | **testpaths** | tests |
-| **addopts** | --strict-markers |
+| **strict_markers** | true |
 | **coverage omit** | tests/* |
 | **coverage fail_under** | 80 |
 
@@ -29,7 +29,7 @@ Part of the [@teo-garcia/templates](https://github.com/teo-garcia/templates) eco
 ## Requirements
 
 - Python 3.12+
-- pytest 8.3+
+- pytest 9.0+
 - pytest-cov 6.0+
 
 ---
@@ -54,7 +54,7 @@ pytest does not support config inheritance natively. The recommended pattern is 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
-addopts = "--strict-markers"
+strict_markers = true
 markers = ["e2e: end-to-end tests requiring live services"]
 
 [tool.coverage.run]
